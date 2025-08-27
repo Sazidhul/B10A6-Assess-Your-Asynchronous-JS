@@ -111,19 +111,24 @@ const displayCategories = (categories) => {
    categories.forEach((item) => {
       //console.log(item);
       // create a button
-      const button = document.createElement("button");
-      button.classList = "btn  flex items-center gap-2";
-      button.innerText = item.category;
+      const buttonContainer = document.createElement("div");
+      // button.classList = "btn  flex items-center gap-2";
+      // button.innerText = item.category;
       
-      // add image + text inside button
-      button.innerHTML = `
-         <img src="${item.category_icon}" alt="${item.category}" class="w-6 h-6 object-contain" />
-         <span>${item.category}</span>
+      // // add image + text inside button
+      // button.innerHTML = `
+      //    <img src="${item.category_icon}" alt="${item.category}" class="w-6 h-6 object-contain" />
+      //    <span>${item.category}</span>
          
-      `;
+      // `;
+
+      buttonContainer.innerHTML = 
+      `
+      <button class="btn  flex items-center gap-2"><img src="${item.category_icon}" alt="${item.category}" class="w-6 h-6 object-contain" /><span>${item.category}</span></button>
+      `
 
       // add button to category container
-      categoryContainer.append(button);
+      categoryContainer.append(buttonContainer);
    });
 };
 
